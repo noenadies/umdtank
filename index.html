@@ -35,6 +35,18 @@ var keyCode;
 
 
 
+var fireaudio;
+var giratanque=0;
+var cambio=0;
+var btizq;
+var concurrevelo=0;
+var convirtualcontr=false;   
+var gamepad1 ;
+var joystick1 ;
+var boton1;
+var rota;
+
+
 var fondo;
 
 
@@ -382,11 +394,11 @@ if(w<=1300){
     gamepad1 = this.game.plugins.add(Phaser.Plugin.Contrlgrd);
         
  
-    joystick1 = gamepad1.addPMando(w/2-200, h/2+70, 1.2, 'gamepad');
+    joystick1 = gamepad1.addPMando(w/2-200-100, h/2+70-200, 1.2, 'gamepad');
  
-    boton1 = gamepad1.addboton1(w/2+100, h/2-50, 1.0, 'gamepad');
+    boton1 = gamepad1.addboton1(w/2+100+100, h/2-50+100, 1.0, 'gamepad');
 
-   btup = game.add.button(w/2-22, h/2, 'btup', actionOnClick, this, 2, 1, 0);
+   btup = game.add.button(w/2-22-200, h/2+80, 'btup', actionOnClick, this, 2, 1, 0);
 
    // btup.onInputOver.add(over, this);
     //btup.onInputOut.add(out, this);
@@ -395,7 +407,7 @@ if(w<=1300){
     btup.fixedToCamera =true;
 
 
-   btizq = game.add.button(w/2-80, h/2+70, 'btup', actionOnClick, this, 2, 1, 0);
+   btizq = game.add.button(w/2-80-200, h/2+70+80, 'btup', actionOnClick, this, 2, 1, 0);
    btizq.rotation=4.71239;
 
 
@@ -403,7 +415,7 @@ if(w<=1300){
    btizq.onInputUp.add(btup_izq, this);
    btizq.fixedToCamera =true;
 
-   btder = game.add.button(w/2+80, h/2+34, 'btup', actionOnClick, this, 2, 1, 0);
+   btder = game.add.button(w/2+80-200, h/2+34+80, 'btup', actionOnClick, this, 2, 1, 0);
 
    btder.rotation=1.5708;
  
@@ -462,16 +474,7 @@ function btup_dr(){
     giratanque=0;
 }
 
- var fireaudio;
-var giratanque=0;
-var cambio=0;
-var btizq;
-var concurrevelo=0;
- var convirtualcontr=false;   
-var gamepad1 ;
-var joystick1 ;
-var boton1;
-var rota;
+
 function update() {
  text.setText("tanques destruidos: "+
  String(enemigoseliminados)+  "    tiempo "+ String(game.time.now/1000) );
